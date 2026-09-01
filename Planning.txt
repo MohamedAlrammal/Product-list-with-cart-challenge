@@ -1,0 +1,7 @@
+First work only on desktop design.
+keep index as just containers (you must at first write one manual card to be check your css)
+work first on your index.html.
+You may need to work on another html file to represent the confirmation modal.
+then work on the styles.css and check the result.
+after that try to populate data using the js (or ts)
+you may use linters(may be overpowered for such a small project but as practice.)
