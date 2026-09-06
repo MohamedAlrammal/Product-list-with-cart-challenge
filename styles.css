@@ -33,12 +33,78 @@
 body{
     margin:0;
     min-height: 100vh;
+    background-color: var(--rose-50);
+    font-family: 'redhat', sans-serif;
+    margin: 0 6.875rem;
 }
 
 main{
     display: flex;
     flex-direction: row;
     gap: 3rem;
+}
+
+.dessert-card{
+    width: min(15.625rem, 90vw);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.dessert-card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.dessert-card-info h2{
+    margin: 0;
+}
+
+.dessert-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+}
+
+.dessert-card-button{
+    position: absolute;
+    place-self: center;
+    top: 66%;
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.625rem 1.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--rose-300);
+    background-color: white;
+    font-family: 'redhat';
+    font-weight: 600;
+}
+
+.dessert-card-button img{
+    width:1rem;
+    height: auto;
+}
+
+.dessert-card .tag{
+    color: var(--rose-300);
+    font-weight: 400;
+    font-size: 0.8rem;
+    
+}
+
+.dessert-card h2{
+    font-weight: 600;
+    color: var(--rose-900);
+    font-size: 1rem;
+}
+
+.dessert-card .price{
+    color: var(--red);
+    font-weight: 700;
+
 }
 
 .cart{
