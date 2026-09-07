@@ -62,7 +62,6 @@ main{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    position: relative;
 }
 
 .dessert-card-info{
@@ -75,6 +74,12 @@ main{
     margin: 0;
 }
 
+.dessert-image-button{
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+}
+
 .dessert-card img{
     width: 100%;
     height: auto;
@@ -83,8 +88,8 @@ main{
 
 .dessert-card-button{
     position: absolute;
-    place-self: center;
-    top: 66%;
+    place-self: start;
+    /* top: 67%; */
     display: flex;
     gap: 0.3rem;
     padding: 0.625rem 1.5rem;
