@@ -109,7 +109,7 @@ main{
 }
 
 .dessert-card .tag{
-    color: var(--rose-300);
+    color: var(--rose-500);
     font-weight: 400;
     font-size: 0.8rem;
     
@@ -125,4 +125,25 @@ main{
     color: var(--red);
     font-weight: 700;
 
+}
+
+.cart{
+    height: 20.75rem;
+    width: 28rem;
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.cart h2{
+    align-self: flex-start;
+    color: var(--red);
+}
+
+.cart p{
+    color: var(--rose-500);
 }
