@@ -1,16 +1,22 @@
 First work only on desktop design.
-keep index as just containers (you must at first write one manual card to be check your css)
+keep index as just containers (you must at first write one manual card to check your css)
 work first on your index.html.
 You may need to work on another html file to represent the confirmation modal.
+work on another html file to represent the full cart and the changed button (you can even work on separate css).
 then work on the styles.css and check the result.
-after that try to populate data using the js (or ts)
+after that try to populate data using the js (or ts):
+    0. add tsconfig and package.json files and struture your folders into src and dest.
+    1. create custom element for the cart and the card and perhaps the confirmation modal. (just some ts files.)
+    2. create the custom classes for each element in its respective file.
+    3. set up code for connection between the three through custom events (just write the boilerplate not real logic)
+    4. test the boilerplate code through some console logs
 you may use linters(may be overpowered for such a small project but as practice.)
 
 ----------------------------------------------------------------------------------------------------
-Some problems have appeared.
+Some problems have appeared.(ANY NEW PROBLEMS WILL BE ADDED TO GITHUB ISSUES NOT HERE.)
 1. problems with the CSS grid:
     - problem of image expansion. (studying of shrink and growth of the grid items may help and
     also the studying of the minmax usage in the grid-template-column property.)
-2. problems with the button position:
+2. (SOLVED)problems with the button position:
     - position of the button isn't in its correct place and change with the image size (may be
     solved when the previous problem is solved.)
