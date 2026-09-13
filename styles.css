@@ -51,10 +51,12 @@ main{
     column-gap: 1.5rem;
     row-gap: 2.25rem;
     width: min(52rem, 90vw);
+    place-items: center;
 }
 
 .dessert-list h1{
     grid-column: 1 / -1;
+    place-self: start;
 }
 
 .dessert-card{
@@ -62,6 +64,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 16rem;
 }
 
 .dessert-card-info{
