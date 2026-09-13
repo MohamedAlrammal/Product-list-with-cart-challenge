@@ -101,6 +101,12 @@ main{
     background-color: white;
     font-family: 'redhat';
     font-weight: 600;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.dessert-card-button:hover{
+    color: var(--red);
+    border-color: var(--red);
 }
 
 .dessert-card-button img{
