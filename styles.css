@@ -128,7 +128,7 @@ main{
 }
 
 .cart{
-    height: 20.75rem;
+    height: min-content;
     width: 28rem;
     box-sizing: border-box;
     padding: 2rem;
