@@ -1,58 +1,40 @@
+"use strict";
 //make the product card generic (accepts attributes for its name, image, ..etc)
 //add the css required and add a click event listener to change the button to counter.
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
-
-type JsonData = {
-    image: {
-        thumbnail: string,
-        mobile: string,
-        tablet: string,
-        desktop: string
-    },
-    name: string,
-    price: number,
-    category: string,
-}
-
-
 class ProductCard extends HTMLElement {
-
-    jsonData!:JsonData;
+    jsonData;
     constructor() {
         super();
     }
-
-    set data(data: JsonData) {
+    set data(data) {
         this.jsonData = data;
     }
-
     connectedCallback() {
-
         let imgSrc = "./assets/images/image-waffle-desktop.jpg", imgWidth = 502, imgHeight = 480;
         let name = "Waffle with Berries";
         let tag = "Waffle";
         let price = 6.50;
-
         if (this.jsonData != null || this.jsonData != undefined) {
             if (document.documentElement.clientWidth <= 500) {
                 imgSrc = this.jsonData.image.mobile;
                 imgWidth = 654;
                 imgHeight = 424;
-            } else if (document.documentElement.clientWidth < 1024) {
-                imgSrc = this.jsonData.image.tablet
+            }
+            else if (document.documentElement.clientWidth < 1024) {
+                imgSrc = this.jsonData.image.tablet;
                 imgWidth = 428;
                 imgHeight = 424;
-            } else {
+            }
+            else {
                 imgSrc = this.jsonData.image.desktop;
                 imgWidth = 502;
                 imgHeight = 480;
             }
-
             name = this.jsonData.name;
             tag = this.jsonData.category;
             price = this.jsonData.price;
         }
-
         this.innerHTML = `
         <article class="dessert-card">
 
@@ -78,30 +60,23 @@ class ProductCard extends HTMLElement {
 		</article>`;
     }
 }
-
 //define the new element.
 customElements.define("product-card", ProductCard);
-
-
 //a function to load data from the data.json file into the cards and create them.
 async function loadCards() {
-    let data: JsonData[] = [];
-    
+    let data = [];
     const response = await fetch("../../../data.json");
     if (!response) {
         console.error("Error fetching cards data");
-    } else {
+    }
+    else {
         data = await response.json();
     }
-
     for (let datum of data) {
-        const card = document.createElement('product-card') as ProductCard;
-
+        const card = document.createElement('product-card');
         card.data = datum;
-
         document.querySelector(".dessert-list")?.appendChild(card);
-
     }
 }
-
 loadCards();
+//# sourceMappingURL=ProductCard.js.map
