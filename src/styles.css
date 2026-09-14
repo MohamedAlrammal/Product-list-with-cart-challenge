@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'redhat';
-    src: url(./assets/fonts/static/RedHatText-Regular.woff2) format('woff2');
+    src: url(../assets/fonts/static/RedHatText-Regular.woff2) format('woff2');
     font-display: swap;
     font-weight: 400;
 }
 
 @font-face {
     font-family: 'redhat';
-    src: url(./assets/fonts/static/RedHatText-SemiBold.woff2) format('woff2');
+    src: url(../assets/fonts/static/RedHatText-SemiBold.woff2) format('woff2');
     font-display: swap;
     font-weight: 600;
 }
 
 @font-face {
     font-family: 'redhat';
-    src: url(./assets/fonts/static/RedHatText-Bold.woff2) format('woff2');
+    src: url(../assets/fonts/static/RedHatText-Bold.woff2) format('woff2');
     font-display: swap;
     font-weight: 700;
 }
