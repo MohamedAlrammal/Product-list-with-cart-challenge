@@ -1,6 +1,7 @@
 //make the product card generic (accepts attributes for its name, image, ..etc)
 //add the css required and add a click event listener to change the button to counter.
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
+import data from '../../../data.json' with { type: 'json' }
 
 type JsonData = {
     image: {
@@ -17,13 +18,9 @@ type JsonData = {
 
 class ProductCard extends HTMLElement {
 
-    jsonData!:JsonData;
+    jsonData!: JsonData;
     constructor() {
         super();
-    }
-
-    set data(data: JsonData) {
-        this.jsonData = data;
     }
 
     connectedCallback() {
@@ -83,25 +80,12 @@ class ProductCard extends HTMLElement {
 customElements.define("product-card", ProductCard);
 
 
-//a function to load data from the data.json file into the cards and create them.
-async function loadCards() {
-    let data: JsonData[] = [];
-    
-    const response = await fetch("../../../data.json");
-    if (!response) {
-        console.error("Error fetching cards data");
-    } else {
-        data = await response.json();
-    }
+//loading data from the data.json file into the cards and create them.
+for (let datum of data) {
+    const card = document.createElement('product-card') as ProductCard;
 
-    for (let datum of data) {
-        const card = document.createElement('product-card') as ProductCard;
+    card.jsonData = datum;
 
-        card.data = datum;
+    document.querySelector(".dessert-list")?.appendChild(card);
 
-        document.querySelector(".dessert-list")?.appendChild(card);
-
-    }
 }
-
-loadCards();
