@@ -15,7 +15,8 @@ type JsonData = {
     category: string,
 }
 
-
+const MOBILE_WIDTH = 500;
+const TABLET_WIDTH = 1024;
 class ProductCard extends HTMLElement {
 
     jsonData!: JsonData;
@@ -31,11 +32,11 @@ class ProductCard extends HTMLElement {
         let price = 6.50;
 
         if (this.jsonData != null || this.jsonData != undefined) {
-            if (document.documentElement.clientWidth <= 500) {
+            if (document.documentElement.clientWidth <= MOBILE_WIDTH) {
                 imgSrc = this.jsonData.image.mobile;
                 imgWidth = 654;
                 imgHeight = 424;
-            } else if (document.documentElement.clientWidth < 1024) {
+            } else if (document.documentElement.clientWidth < TABLET_WIDTH) {
                 imgSrc = this.jsonData.image.tablet
                 imgWidth = 428;
                 imgHeight = 424;

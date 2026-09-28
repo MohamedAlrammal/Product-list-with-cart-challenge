@@ -2,6 +2,8 @@
 //add the css required and add a click event listener to change the button to counter.
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
 import data from '../../../data.json' with { type: 'json' };
+const MOBILE_WIDTH = 500;
+const TABLET_WIDTH = 1024;
 class ProductCard extends HTMLElement {
     jsonData;
     constructor() {
@@ -13,12 +15,12 @@ class ProductCard extends HTMLElement {
         let tag = "Waffle";
         let price = 6.50;
         if (this.jsonData != null || this.jsonData != undefined) {
-            if (document.documentElement.clientWidth <= 500) {
+            if (document.documentElement.clientWidth <= MOBILE_WIDTH) {
                 imgSrc = this.jsonData.image.mobile;
                 imgWidth = 654;
                 imgHeight = 424;
             }
-            else if (document.documentElement.clientWidth < 1024) {
+            else if (document.documentElement.clientWidth < TABLET_WIDTH) {
                 imgSrc = this.jsonData.image.tablet;
                 imgWidth = 428;
                 imgHeight = 424;
