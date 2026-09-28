@@ -3,23 +3,12 @@
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
 import data from '../../../data.json' with { type: 'json' }
 
-type JsonData = {
-    image: {
-        thumbnail: string,
-        mobile: string,
-        tablet: string,
-        desktop: string
-    },
-    name: string,
-    price: number,
-    category: string,
-}
 
 const MOBILE_WIDTH = 500;
 const TABLET_WIDTH = 1024;
 class ProductCard extends HTMLElement {
 
-    jsonData!: JsonData;
+    jsonData: JsonData | undefined;
     constructor() {
         super();
     }
