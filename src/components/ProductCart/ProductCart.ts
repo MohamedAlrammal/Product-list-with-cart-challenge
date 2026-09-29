@@ -6,7 +6,7 @@ class ProductCart extends HTMLElement {
         super();
     }
 
-    onConnectedCallback() {
+    connectedCallback() {
 
         this.innerHTML = `<article class="cart">
 

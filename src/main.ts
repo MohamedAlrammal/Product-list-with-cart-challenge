@@ -1,6 +1,6 @@
 import data from '../data.json' with { type: 'json' }
-import { ProductCard } from './components/ProductCard/ProductCard';
-import { ProductCart } from './components/ProductCart/ProductCart';
+import { ProductCard } from './components/ProductCard/ProductCard.js';
+import { ProductCart } from './components/ProductCart/ProductCart.js';
 
 //define the card(not cart)
 customElements.define("product-card", ProductCard);
@@ -19,7 +19,7 @@ for (let datum of data) {
 //define the cart(not card) element.
 customElements.define('product-cart', ProductCart);
 
-const cart = document.createElement('product-card') as ProductCart;
+const cart = document.createElement('product-cart') as ProductCart;
 
 document.querySelector("main")?.appendChild(cart);
 
