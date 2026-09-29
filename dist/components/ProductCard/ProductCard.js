@@ -1,7 +1,6 @@
 //make the product card generic (accepts attributes for its name, image, ..etc)
 //add the css required and add a click event listener to change the button to counter.
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
-import data from '../../../data.json' with { type: 'json' };
 const MOBILE_WIDTH = 500;
 const TABLET_WIDTH = 1024;
 class ProductCard extends HTMLElement {
@@ -59,12 +58,5 @@ class ProductCard extends HTMLElement {
 		</article>`;
     }
 }
-//define the new element.
-customElements.define("product-card", ProductCard);
-//loading data from the data.json file into the cards and create them.
-for (let datum of data) {
-    const card = document.createElement('product-card');
-    card.jsonData = datum;
-    document.querySelector(".dessert-list")?.appendChild(card);
-}
+export { ProductCard };
 //# sourceMappingURL=ProductCard.js.map

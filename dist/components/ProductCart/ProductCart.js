@@ -1,4 +1,3 @@
-"use strict";
 class ProductCart extends HTMLElement {
     constructor() {
         super();
@@ -15,7 +14,5 @@ class ProductCart extends HTMLElement {
 		</article>`;
     }
 }
-customElements.define('product-cart', ProductCart);
-const cart = document.createElement('product-card');
-document.querySelector("main")?.appendChild(cart);
+export { ProductCart };
 //# sourceMappingURL=ProductCart.js.map

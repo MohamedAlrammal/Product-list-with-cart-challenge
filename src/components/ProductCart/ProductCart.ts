@@ -20,8 +20,5 @@ class ProductCart extends HTMLElement {
     }
 }
 
-customElements.define('product-cart', ProductCart);
+export { ProductCart }
 
-const cart = document.createElement('product-card') as ProductCart;
-
-document.querySelector("main")?.appendChild(cart);
