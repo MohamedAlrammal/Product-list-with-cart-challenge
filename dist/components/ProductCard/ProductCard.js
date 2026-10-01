@@ -3,8 +3,8 @@
 //add the custom event that will be trigerred when the button is clicked or the counter is changed.
 const MOBILE_WIDTH = 500;
 const TABLET_WIDTH = 1024;
-const MOBILE_IMAGE_WIDTH = 502;
-const MOBILE_IMAGE_HEIGHT = 480;
+const MOBILE_IMAGE_WIDTH = 654;
+const MOBILE_IMAGE_HEIGHT = 424;
 const TABLET_IMAGE_WIDTH = 428;
 const TABLET_IMAGE_HEIGHT = 424;
 const DESKTOP_IMAGE_WIDTH = 502;
@@ -15,26 +15,13 @@ class ProductCard extends HTMLElement {
         super();
     }
     connectedCallback() {
-        let imgDesktop = "./assets/images/image-waffle-desktop.jpg", imgWidth = 502, imgHeight = 480;
+        let imgDesktop = "./assets/images/image-waffle-desktop.jpg";
         let imgTablet = "./assets/images/image-waffle-tablet.jpg";
         let imgMobile = "./assets/images/image-waffle-mobile.jpg";
         let name = "Waffle with Berries";
         let tag = "Waffle";
         let price = 6.50;
         if (this.jsonData != null && this.jsonData != undefined) {
-            // if (document.documentElement.clientWidth <= MOBILE_WIDTH) {
-            //     imgSrc = this.jsonData.image.mobile;
-            //     imgWidth = 654;
-            //     imgHeight = 424;
-            // } else if (document.documentElement.clientWidth < TABLET_WIDTH) {
-            //     imgSrc = this.jsonData.image.tablet
-            //     imgWidth = 428;
-            //     imgHeight = 424;
-            // } else {
-            //     imgSrc = this.jsonData.image.desktop;
-            //     imgWidth = 502;
-            //     imgHeight = 480;
-            // }
             imgDesktop = this.jsonData.image.desktop;
             imgTablet = this.jsonData.image.tablet;
             imgMobile = this.jsonData.image.mobile;
