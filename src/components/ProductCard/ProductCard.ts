@@ -5,6 +5,16 @@
 
 const MOBILE_WIDTH = 500;
 const TABLET_WIDTH = 1024;
+
+const MOBILE_IMAGE_WIDTH = 502;
+const MOBILE_IMAGE_HEIGHT = 480;
+
+const TABLET_IMAGE_WIDTH = 428;
+const TABLET_IMAGE_HEIGHT = 424;
+
+const DESKTOP_IMAGE_WIDTH = 502;
+const DESKTOP_IMAGE_HEIGHT = 480;
+
 class ProductCard extends HTMLElement {
 
     jsonData: JsonData | undefined;
@@ -14,25 +24,18 @@ class ProductCard extends HTMLElement {
 
     connectedCallback() {
 
-        let imgSrc = "./assets/images/image-waffle-desktop.jpg", imgWidth = 502, imgHeight = 480;
+        let imgDesktop = "./assets/images/image-waffle-desktop.jpg";
+        let imgTablet = "./assets/images/image-waffle-tablet.jpg";
+        let imgMobile = "./assets/images/image-waffle-mobile.jpg";
         let name = "Waffle with Berries";
         let tag = "Waffle";
         let price = 6.50;
 
-        if (this.jsonData != null || this.jsonData != undefined) {
-            if (document.documentElement.clientWidth <= MOBILE_WIDTH) {
-                imgSrc = this.jsonData.image.mobile;
-                imgWidth = 654;
-                imgHeight = 424;
-            } else if (document.documentElement.clientWidth < TABLET_WIDTH) {
-                imgSrc = this.jsonData.image.tablet
-                imgWidth = 428;
-                imgHeight = 424;
-            } else {
-                imgSrc = this.jsonData.image.desktop;
-                imgWidth = 502;
-                imgHeight = 480;
-            }
+        if (this.jsonData != null && this.jsonData != undefined) {
+
+            imgDesktop = this.jsonData.image.desktop;
+            imgTablet = this.jsonData.image.tablet;
+            imgMobile = this.jsonData.image.mobile;
 
             name = this.jsonData.name;
             tag = this.jsonData.category;
@@ -44,7 +47,11 @@ class ProductCard extends HTMLElement {
 
 				<div class="dessert-image-button">
 
-					<img src="${imgSrc}" alt="" width="${imgWidth}" height="${imgHeight}">
+                <picture>
+                    <source srcset="${imgMobile}" media="(width <= ${MOBILE_WIDTH}px)" width="${MOBILE_IMAGE_WIDTH}" height="${MOBILE_IMAGE_HEIGHT}">
+                    <source srcset="${imgTablet}" media="(width <= ${TABLET_WIDTH}px)" width="${TABLET_IMAGE_WIDTH}" height="${TABLET_IMAGE_HEIGHT}">
+                    <img src="${imgDesktop}" alt="" width="${DESKTOP_IMAGE_WIDTH}" height="${DESKTOP_IMAGE_HEIGHT}">
+                </picture>
 
 					<button class="dessert-card-button"> <img src="./assets/images/icon-add-to-cart.svg" alt=""
 							width="21" height="20"> Add to Cart</button>
